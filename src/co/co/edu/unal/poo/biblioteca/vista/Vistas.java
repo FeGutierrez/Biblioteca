@@ -15,6 +15,9 @@ import edu.unal.poo.biblioteca.datos.Biblioteca;
  * @author Flexxo333
  */
 public class Vistas {
+
+    public Vistas() {
+    }
     //FORMATOS DE ESCRITURA
     
     public void escribirUnLibro(Libro libro){
