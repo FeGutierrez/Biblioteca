@@ -185,9 +185,9 @@ public class Biblioteca {
     public void escribirPrestamos(){
         for (int i = 0; i < this.getPrestamosTotales().size(); i++) {
             System.out.println("ID: "+this.getPrestamosTotales().get(i).getCopia().getId()+
-                    "  " +this.getPrestamosTotales().get(i).getCopia().getLibro().getTitulo()
-            + "  " + this.getPrestamosTotales().get(i).getCliente().getNombre()+ "  "
-            + this.getPrestamosTotales().get(i).getFechaDevolucion());
+                    "    " + " Titulo: "+this.getPrestamosTotales().get(i).getCopia().getLibro().getTitulo()
+            + "    " + "Cliente: "+this.getPrestamosTotales().get(i).getCliente().getNombre()+ "    "
+            + "Fecha entrega: "+this.getPrestamosTotales().get(i).getFechaDevolucion());
         }
     }
     
