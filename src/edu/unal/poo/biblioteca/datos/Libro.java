@@ -1,3 +1,5 @@
+package edu.unal.poo.biblioteca.datos;
+
 
 import java.util.ArrayList;
 
@@ -19,6 +21,7 @@ public class Libro {
     private Editorial editorial;
     private Categoria categoria;
     private ArrayList<Copia> copiasLibro = new ArrayList<>();
+    private ArrayList<Copia> copiasPrestadas = new ArrayList<>();
 
     public Libro(String titulo, String isbn, Autor autor, Editorial editorial, Categoria categoria) {
         this.titulo = titulo;
@@ -83,5 +86,15 @@ public class Libro {
     public void setCopiasLibro(ArrayList<Copia> copiasLibro) {
         this.copiasLibro = copiasLibro;
     }
+
+    public ArrayList<Copia> getCopiasPrestadas() {
+        return copiasPrestadas;
+    }
+
+    public void setCopiasPrestadas(ArrayList<Copia> copiasPrestadas) {
+        this.copiasPrestadas = copiasPrestadas;
+    }
+    
+    
     
 }

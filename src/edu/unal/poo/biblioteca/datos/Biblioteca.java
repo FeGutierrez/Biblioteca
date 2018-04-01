@@ -1,3 +1,5 @@
+package edu.unal.poo.biblioteca.datos;
+
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -160,7 +162,7 @@ public class Biblioteca {
         Prestamo prestamo = new Prestamo(id, cliente, copia, date);
         this.copiasPrestadas.add(copia);
         this.prestamosTotales.add(prestamo);
-        copia.getLibro().getCopiasLibro().add(copia);
+        copia.getLibro().getCopiasPrestadas().add(copia);
         prestamo.fechaFinalDeDevolucion(date, copia);
         cliente.getCopiasPrestadas().add(copia);
         cliente.getPrestamos().add(prestamo);
@@ -185,61 +187,61 @@ public class Biblioteca {
         return masPrestamos;
     }
     
-    public void escribirPrestamos(){
-        for (int i = 0; i < this.getPrestamosTotales().size(); i++) {
-            System.out.println("ID: "+this.getPrestamosTotales().get(i).getCopia().getId()+
-                    "    " + " Titulo: "+this.getPrestamosTotales().get(i).getCopia().getLibro().getTitulo()
-            + "    " + "Cliente: "+this.getPrestamosTotales().get(i).getCliente().getNombre()+ "    "
-            + "Fecha entrega: "+this.getPrestamosTotales().get(i).getFechaDevolucion());
-        }
-    }
-    
-    public void escribirEditoriales(){
-        for (int i = 0; i < this.getEditoriales().size(); i++) {
-            System.out.println("ID: "+this.getEditoriales().get(i).getId() + 
-                    "  "+this.getEditoriales().get(i).getNombre());
-        }
-    }
-    public void escribirCategorias(){
-        for (int i = 0; i < this.getCategorias().size(); i++) {
-            System.out.println("ID: "+this.getCategorias().get(i).getId() + 
-                    "  "+this.getCategorias().get(i).getNombre() + " \t Horas: "+this.getCategorias().get(i).getHorasPrestamo());
-        }
-    }
-    public void escribirAutores(){
-        for (int i = 0; i < this.getAutores().size(); i++) {
-            System.out.println("ID: "+  this.getAutores().get(i).getId()+"  "+ this.getAutores().get(i).getNombre() + " " +
-                    this.getAutores().get(i).getApellido());
-        }
-    }
-    
-    public void escribirClientes(){
-        for (int i = 0; i < this.getClientes().size(); i++) {
-            System.out.println("ID: "+this.getClientes().get(i).getId()+ " " +
-                    this.getClientes().get(i).getNombre());
-        }
-    }
-    public void escribirLibros(){
-        for (int i = 0; i < this.getLibros().size(); i++) {
-            System.out.println("ID: "+this.getLibros().get(i).getId()
-                    + "  " +this.getLibros().get(i).getTitulo());
-        }
-    }
-    
-    
-    public void escribirCopias(){
-        for (int i = 0; i < this.copias.size(); i++) {
-            System.out.println("ID: "+this.getCopias().get(i).getId()+ 
-                    " "+this.getCopias().get(i).getLibro().getTitulo());
-        
-        }
-    }
-    
-    public void escribirLibrosxCliente(int id){
-        for (int i = 0; i < this.getClientes().get(id).getCopiasPrestadas().size(); i++) {
-            System.out.println(this.getClientes().get(id).getCopiasPrestadas().get(i).getLibro().getTitulo());
-        }        
-    }
-            
-    
+//    public void escribirPrestamos(){
+//        for (int i = 0; i < this.getPrestamosTotales().size(); i++) {
+//            System.out.println("ID: "+this.getPrestamosTotales().get(i).getCopia().getId()+
+//                    "    " + " Titulo: "+this.getPrestamosTotales().get(i).getCopia().getLibro().getTitulo()
+//            + "    " + "Cliente: "+this.getPrestamosTotales().get(i).getCliente().getNombre()+ "    "
+//            + "Fecha entrega: "+this.getPrestamosTotales().get(i).getFechaDevolucion());
+//        }
+//    }
+//    
+//    public void escribirEditoriales(){
+//        for (int i = 0; i < this.getEditoriales().size(); i++) {
+//            System.out.println("ID: "+this.getEditoriales().get(i).getId() + 
+//                    "  "+this.getEditoriales().get(i).getNombre());
+//        }
+//    }
+//    public void escribirCategorias(){
+//        for (int i = 0; i < this.getCategorias().size(); i++) {
+//            System.out.println("ID: "+this.getCategorias().get(i).getId() + 
+//                    "  "+this.getCategorias().get(i).getNombre() + " \t Horas: "+this.getCategorias().get(i).getHorasPrestamo());
+//        }
+//    }
+//    public void escribirAutores(){
+//        for (int i = 0; i < this.getAutores().size(); i++) {
+//            System.out.println("ID: "+  this.getAutores().get(i).getId()+"  "+ this.getAutores().get(i).getNombre() + " " +
+//                    this.getAutores().get(i).getApellido());
+//        }
+//    }
+//    
+//    public void escribirClientes(){
+//        for (int i = 0; i < this.getClientes().size(); i++) {
+//            System.out.println("ID: "+this.getClientes().get(i).getId()+ " " +
+//                    this.getClientes().get(i).getNombre());
+//        }
+//    }
+//    public void escribirLibros(){
+//        for (int i = 0; i < this.getLibros().size(); i++) {
+//            System.out.println("ID: "+this.getLibros().get(i).getId()
+//                    + "  " +this.getLibros().get(i).getTitulo());
+//        }
+//    }
+//    
+//    
+//    public void escribirCopias(){
+//        for (int i = 0; i < this.copias.size(); i++) {
+//            System.out.println("ID: "+this.getCopias().get(i).getId()+ 
+//                    " "+this.getCopias().get(i).getLibro().getTitulo());
+//        
+//        }
+//    }
+//    
+//    public void escribirLibrosxCliente(int id){
+//        for (int i = 0; i < this.getClientes().get(id).getCopiasPrestadas().size(); i++) {
+//            System.out.println(this.getClientes().get(id).getCopiasPrestadas().get(i).getLibro().getTitulo());
+//        }        
+//    }
+//            
+//    
 }

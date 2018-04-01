@@ -1,3 +1,5 @@
+package edu.unal.poo.biblioteca.datos;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,15 +10,15 @@
  *
  * @author Flexxo333
  */
-public class Categoria {
+public class Editorial {
     
     private int id;
     private String nombre;
-    private int horasPrestamo;
+    private int nit;
 
-    public Categoria(String nombre, int horasPrestamo) {
+    public Editorial(String nombre, int nit) {
         this.nombre = nombre;
-        this.horasPrestamo = horasPrestamo;
+        this.nit = nit;
     }
 
     public int getId() {
@@ -26,6 +28,8 @@ public class Categoria {
     public void setId(int id) {
         this.id = id;
     }
+    
+    
 
     public String getNombre() {
         return nombre;
@@ -35,15 +39,15 @@ public class Categoria {
         this.nombre = nombre;
     }
 
-    public int getHorasPrestamo() {
-        return horasPrestamo;
+    public int getNit() {
+        return nit;
     }
 
-    public void setHorasPrestamo(int horasPrestamo) {
-        this.horasPrestamo = horasPrestamo;
+    public void setNit(int nit) {
+        this.nit = nit;
     }
     
     
-
+    
     
 }
