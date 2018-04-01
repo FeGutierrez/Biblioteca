@@ -129,6 +129,9 @@ public class Biblioteca {
     }
     
     public boolean crearCategoria(String nombre, int horasPrestamo){
+        if(horasPrestamo>120){
+            horasPrestamo = 120;
+        }
         Categoria categoria = new Categoria(nombre, horasPrestamo);
         this.categorias.add(categoria);
         categoria.setId(this.categorias.size()-1);
@@ -200,7 +203,7 @@ public class Biblioteca {
     public void escribirCategorias(){
         for (int i = 0; i < this.getCategorias().size(); i++) {
             System.out.println("ID: "+this.getCategorias().get(i).getId() + 
-                    "  "+this.getCategorias().get(i).getNombre());
+                    "  "+this.getCategorias().get(i).getNombre() + " \t Horas: "+this.getCategorias().get(i).getHorasPrestamo());
         }
     }
     public void escribirAutores(){
@@ -231,5 +234,12 @@ public class Biblioteca {
         
         }
     }
+    
+    public void escribirLibrosxCliente(int id){
+        for (int i = 0; i < this.getClientes().get(id).getCopiasPrestadas().size(); i++) {
+            System.out.println(this.getClientes().get(id).getCopiasPrestadas().get(i).getLibro().getTitulo());
+        }        
+    }
+            
     
 }
